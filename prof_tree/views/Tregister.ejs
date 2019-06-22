@@ -1,0 +1,23 @@
+<% include partials/header %>
+
+<form method="POST" action="/teacher-register">
+    <input type="radio" name="type" value="teacher" checked>Teacher<br>
+    <input type="radio" name="type" value="student">Student<br>
+    <input type="text" name="username" placeholder="Name">
+    <input type="text" name="rollnumber" placeholder="Enter Institute ID">
+    <input type="radio" name="gender" value="male" checked>Male<br>
+    <input type="radio" name="gender" value="female">Female<br>
+    <input type="radio" name="gender" value="other">Other<br>
+    <input type="date" name="dob">
+    <input type="text" name="email" placeholder="E-Mail ID">
+    <input type="password" name="password" placeholder="Password">
+    <input type="password" name="password1" placeholder="Confirm Password">
+    
+    <button>Register!</button>
+</form>
+
+
+
+
+
+<% include partials/footer %>

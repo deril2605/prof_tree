@@ -1,0 +1,32 @@
+<h1>hi teacher</h1>
+<a href="/teacher/<%= teacher.username %>/edit">EDIT</a>
+
+
+    <p><%= teacher.username %> </p><br>
+    <p><%= teacher.gender %></p><br>
+    <p><%= teacher.dob %></p><br>
+    <p><%= teacher.email %></p><br>
+    <p><%= teacher.phno %></p><br>
+    <p><%= teacher.designation %></p><br>
+    <p><%= teacher.qualification %></p><br>
+    <p><%= teacher.college %></p><br>
+    <p><%= teacher.address %></p><br>
+    <p><%= teacher.interests %></p><br>
+    <p><%= teacher.firstName %></p><br>
+    <p><%= teacher.lastName %></p><br>
+    <p><%= teacher.fields %></p><br>
+
+<p><% teacher.stu.forEach(function(sl){ %>
+        <li>
+        <% if(sl.sturoll){ %>
+        <li><a href="/student/<%= sl.sturoll %>/profile"><%= sl.stufirstname %> <%= sl.stulastname %></a></li>
+        <% } %>
+        </li>
+        <li><%= sl.sturoll %></li>
+        <li><%= sl.stuproj %></li>
+        <li><%= sl.stufromdate %></li>
+        <li><%= sl.stutodate %></li>
+        <li><%= sl.studescp %></li>
+
+    <% }) %>    
+    </p>

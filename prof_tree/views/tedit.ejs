@@ -1,0 +1,18 @@
+<h1>T edit</h1>
+
+<form action="/teacher/<%= teacher.username %>/edit?_method=PUT" method="POST">
+    <input type="text" name="teacher[email]" value="<%= teacher.email%>">
+    <input type="text" name="teacher[designation]" value="<%= teacher.designation%>">
+    <input type="text" name="teacher[firstName]" value="<%= teacher.firstName%>">
+    <input type="text" name="teacher[lastName]" value="<%= teacher.lastName%>">
+    <input type="date" name="teacher[dob]" value="<%= teacher.dob%>">
+    <input type="text" name="teacher[phno]" value="<%= teacher.phno%>">
+    <input type="text" name="teacher[qualification]" value="<%= teacher.qualification%>">
+    <input type="text" name="teacher[interests]" value="<%= teacher.interests%>">
+    <input type="text" name="teacher[college]" value="<%= teacher.college%>">
+    <input type="text" name="teacher[fields]" value="<%= teacher.fields%>">
+    <input type="text" name="teacher[address]" value="<%= teacher.address%>">
+    
+    <button>SUBMIT</button>
+    
+</form>

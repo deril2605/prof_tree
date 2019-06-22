@@ -1,0 +1,50 @@
+<% include partials/header %>
+<div id="cont" >
+    <h1 id="top">Birla Institute of Technology, Mesra</h1>
+    <button id="#chose" class="btn btn-lg btn-danger">LOGIN</button><br>
+    <div id="logtype" class="toglog">
+    <a class="btn btn-deafult" href="/student/login">LOGIN AS STUDENT</a><br>
+    <a class="btn btn-default" href="/teacher/login">LOGIN AS TEACHER</a><br>
+    </div>
+    <a class="btn btn-lg btn-primary" href="/register">REGISTER</a><br>
+</div>
+
+
+<script>
+window.onload=function(){
+    var button = document.getElementById("#chose")
+    var type = document.querySelector("#logtype")
+    var isClass=false;
+    
+
+button.addEventListener('click',function(){
+    type.classList.toggle("toglog")
+})
+}
+</script>
+<style type="text/css">
+
+    #cont {
+        
+        border_color : black;
+        border-width : 2px; 
+        margin : auto;
+        background : pink;
+        
+    }
+    
+    #top {
+        background-color : pink;
+          border-color : black;
+        border-width : 2px; 
+        margin : auto;
+    }
+    .toglog{
+        display: none;
+    }
+   
+    
+</style>
+
+
+<% include partials/footer %>

@@ -1,0 +1,17 @@
+<h1>S edit</h1>
+
+<form action="/student/<%= student.username %>/edit?_method=PUT" method="POST">
+    <input type="text" name="student[email]" value="<%= student.email%>">
+    <input type="text" name="student[branch]" value="<%= student.branch%>">
+    <input type="text" name="student[firstName]" value="<%= student.firstName%>">
+    <input type="text" name="student[lastName]" value="<%= student.lastName%>">
+    <input type="date" name="student[dob]" value="<%= student.dob%>">
+    <input type="text" name="student[phno]" value="<%= student.phno%>">
+    <input type="text" name="student[gradyear]" value="<%= student.gradyear%>">
+    <input type="text" name="student[age]" value="<%= student.age%>">
+    <input type="text" name="student[college]" value="<%= student.college%>">
+    <input type="text" name="student[address]" value="<%= student.address%>">
+    
+    <button>SUBMIT</button>
+    
+</form>

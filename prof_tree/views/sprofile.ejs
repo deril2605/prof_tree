@@ -1,0 +1,81 @@
+<% include partials/header %>
+<h1>hi student</h1>
+<a href="/student/<%= student.username %>/edit">EDIT</a>
+
+
+    <p><%= student.username %> </p><br>
+    <p><%= student.gender %></p><br>
+    <p><%= student.dob %></p><br>
+    <p><%= student.email %></p><br>
+    <p><%= student.phno %></p><br>
+    <p><%= student.branch %></p><br>
+    <p><%= student.gradyear %></p><br>
+    <p><%= student.college %></p><br>
+    <p><%= student.address %></p><br>
+    <p><%= student.age %></p><br>
+    <p><%= student.firstName %></p><br>
+    <p><%= student.lastName %></p><br>
+    
+    <div>
+        
+    <% student.exp.forEach(function(el){ %>
+        <hr class="col-xs-12" >
+
+        <p><%= el.projname %></p> 
+        <p><%= el.fromdate %></p> 
+        <p><%= el.todate %></p> 
+        <% if(el.teachername){ %>
+        <p><a href="/teacher/<%= el.teachername %>/profile"><%= el.teachername %></a></p> 
+        <% } %>
+        
+        <p><%= el.description %></p> <br>
+
+  
+
+    <% }) %>  
+     
+
+    </div>
+
+<button class="btn btn-lg btn-primary" id="choose">Add Experience</button>
+<form class="togform"id="expform" action="/student/<%= student.username %>/profile" method="POST">
+    <input type="text" name="projname" placeholder="Project Title">
+    <input type="text" name="fromdate" placeholder="From Date">
+    <input type="text" name="todate" placeholder="To Date">
+    <select name="teachername">
+        <option value="NA">Teacher Under</option>
+        <% teachers.forEach(function(teacher){ %>
+                <option value="<%= teacher.username%>"><%= teacher.firstName%> <%= teacher.lastName%></option>
+        <% }) %>
+    </select>
+    <input type="text" name="descp" placeholder="Description">
+    <button>Submit</button>
+</form>
+<script>
+    var button = document.querySelector("#choose")
+    var form = document.querySelector("#expform")
+    var isClass=false;
+
+button.addEventListener('click',function(){
+    form.classList.toggle("togform")
+    if(isClass){
+    button.classList.remove("togbut")
+    button.classList.add("btn-primary")
+    isClass=false;
+    }
+    else{
+        button.classList.remove("btn-primary")
+            button.classList.add("togbut")
+    isClass=true;
+    }
+})
+</script>
+<style type="text/css">
+    .togform{
+        display: none;
+    }
+    .togbut{
+        color: rgb(192,192,192);
+    }
+</style>
+<% include partials/footer %>
